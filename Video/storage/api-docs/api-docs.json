@@ -19,18 +19,18 @@
         }
     ],
     "paths": {
-        "/src": {
+        "/video/{id}/subtitle": {
             "get": {
                 "tags": [
-                    "src"
+                    "subtitle"
                 ],
-                "summary": "Get all src",
+                "summary": "Get subtitle with id",
                 "description": "Get all src",
                 "parameters": [
                     {
-                        "name": "src",
+                        "name": "id",
                         "in": "query",
-                        "description": "src Id",
+                        "description": "video Id",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -67,10 +67,10 @@
                 ]
             }
         },
-        "/src/{id}": {
+        "/video/{id}/subtitle/{subid}": {
             "put": {
                 "tags": [
-                    "src"
+                    "subtitle"
                 ],
                 "summary": "src update",
                 "description": "Update a src",
@@ -78,7 +78,17 @@
                     {
                         "name": "id",
                         "in": "query",
-                        "description": "src id",
+                        "description": "video id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "3fdfd9a2-1a28-4fdb-a591-0e18af6feb9e"
+                        }
+                    },
+                    {
+                        "name": "subid",
+                        "in": "query",
+                        "description": "subtitle id",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -91,7 +101,7 @@
                         "application/json": {
                             "schema": {},
                             "example": {
-                                "title": null
+                                "Description": null
                             }
                         }
                     }
@@ -122,7 +132,7 @@
                 ]
             }
         },
-        "/video-upload": {
+        "/video": {
             "post": {
                 "tags": [
                     "Video Upload"
@@ -131,19 +141,9 @@
                 "description": "Uploading of video ",
                 "parameters": [
                     {
-                        "name": "video_id",
+                        "name": "title",
                         "in": "query",
-                        "description": "Video ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "example": "2719cde8-7019-4ca8-81f5-1b6057037307"
-                        }
-                    },
-                    {
-                        "name": "video_name",
-                        "in": "query",
-                        "description": "Video Name",
+                        "description": "Video title",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -151,13 +151,13 @@
                         }
                     },
                     {
-                        "name": "video_path",
+                        "name": "description",
                         "in": "query",
-                        "description": "Video Path",
+                        "description": "Video description",
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "example": "http://www.aws.videopath1243"
+                            "example": "kids movie"
                         }
                     }
                 ],
@@ -166,9 +166,8 @@
                         "application/json": {
                             "schema": {},
                             "example": {
-                                "video_id": "8c3b36c0-44be-4a35-83ff-236140b06b7f",
-                                "video_name": "cendarela",
-                                "video_path": "http://www.aws.videopath1243"
+                                "title": "8c3b36c0-44be-4a35-83ff-236140b06b7f",
+                                "description": "cendarela"
                             }
                         }
                     }

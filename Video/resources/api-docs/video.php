@@ -2,23 +2,13 @@
 
 /**
  * @OA\Post(
- *     path="/video-upload",
+ *     path="/video",
  *     tags={"Video Upload"},
  *     summary="Uploading Video for the system",
  *     description="Uploading of video ",
- *  @OA\Parameter(
- *          name="video_id",
- *          description="Video ID",
- *          required=true,
- *          in="query",
- *          @OA\Schema(
- *              type="string",
- *              example="2719cde8-7019-4ca8-81f5-1b6057037307"
- *          )
- *      ),
  *  *  @OA\Parameter(
- *          name="video_name",
- *          description="Video Name",
+ *          name="title",
+ *          description="Video title",
  *          required=true,
  *          in="query",
  *          @OA\Schema(
@@ -27,21 +17,20 @@
  *          )
  *      ),
  *  *  @OA\Parameter(
- *          name="video_path",
- *          description="Video Path",
+ *          name="description",
+ *          description="Video description",
  *          required=false,
  *          in="query",
  *          @OA\Schema(
  *              type="string",
- *              example="http://www.aws.videopath1243"
+ *              example="kids movie"
  *          )
  *      ),
  *     @OA\RequestBody(
  *        @OA\JsonContent(
  *           example={
- *                   "video_id": "8c3b36c0-44be-4a35-83ff-236140b06b7f",
- *                    "video_name": "cendarela",
- *                    "video_path": "http://www.aws.videopath1243",
+ *                   "title": "8c3b36c0-44be-4a35-83ff-236140b06b7f",
+ *                    "description": "cendarela",
  *                   }
  *        )
  *     ),

@@ -2,13 +2,13 @@
 
 /**
  * @OA\Get(
- *     path="/src",
- *     tags={"src"},
- *     summary="Get all src",
+ *     path="/video/{id}/subtitle",
+ *     tags={"subtitle"},
+ *     summary="Get subtitle with id",
  *     description="Get all src",
  *      @OA\Parameter(
- *          name="src",
- *          description="src Id",
+ *          name="id",
+ *          description="video Id",
  *          required=true,
  *          in="query",
  *          @OA\Schema(
@@ -43,13 +43,23 @@
 
  /**
  * @OA\Put(
- *     path="/src/{id}",
- *     tags={"src"},
+ *     path="/video/{id}/subtitle/{subid}",
+ *     tags={"subtitle"},
  *     summary="src update",
  *     description="Update a src",
  *     @OA\Parameter(
  *          name="id",
- *          description="src id",
+ *          description="video id",
+ *          required=true,
+ *          in="query",
+ *          @OA\Schema(
+ *              type="string",
+ *              example="3fdfd9a2-1a28-4fdb-a591-0e18af6feb9e"
+ *          )
+ *     ),
+ *     @OA\Parameter(
+ *          name="subid",
+ *          description="subtitle id",
  *          required=true,
  *          in="query",
  *          @OA\Schema(
@@ -60,7 +70,7 @@
  *     @OA\RequestBody(
  *        @OA\JsonContent(
  *           example={
- *                   "title": null,
+ *                   "Description": null,
  *                   }
  *        )
  *     ),
