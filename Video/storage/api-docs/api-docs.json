@@ -19,16 +19,16 @@
         }
     ],
     "paths": {
-        "/video/{id}/subtitle": {
+        "/video/{videoid}/subtitle?type=sub": {
             "get": {
                 "tags": [
-                    "subtitle"
+                    "Subtitles"
                 ],
                 "summary": "Get subtitle with id",
-                "description": "Get all src",
+                "description": "Get subtitle for given video",
                 "parameters": [
                     {
-                        "name": "id",
+                        "name": "videoid",
                         "in": "query",
                         "description": "video Id",
                         "required": true,
@@ -67,16 +67,16 @@
                 ]
             }
         },
-        "/video/{id}/subtitle/{subid}": {
+        "/video/{videoid}/subtitle/{subtitleId}": {
             "put": {
                 "tags": [
-                    "subtitle"
+                    "Subtitles"
                 ],
-                "summary": "src update",
-                "description": "Update a src",
+                "summary": "Modify Subtitle",
+                "description": "Modify Subtitle",
                 "parameters": [
                     {
-                        "name": "id",
+                        "name": "videoid",
                         "in": "query",
                         "description": "video id",
                         "required": true,
@@ -86,7 +86,7 @@
                         }
                     },
                     {
-                        "name": "subid",
+                        "name": "subtitleId",
                         "in": "query",
                         "description": "subtitle id",
                         "required": true,
@@ -101,7 +101,9 @@
                         "application/json": {
                             "schema": {},
                             "example": {
-                                "Description": null
+                                "timeFromInSeconds": "10",
+                                "timeToInSeconds": "40",
+                                "text": "This is the updated subtitle text"
                             }
                         }
                     }
@@ -166,8 +168,8 @@
                         "application/json": {
                             "schema": {},
                             "example": {
-                                "title": "8c3b36c0-44be-4a35-83ff-236140b06b7f",
-                                "description": "cendarela"
+                                "title": "cenderela",
+                                "description": "once opone"
                             }
                         }
                     }

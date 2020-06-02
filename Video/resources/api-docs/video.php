@@ -29,8 +29,8 @@
  *     @OA\RequestBody(
  *        @OA\JsonContent(
  *           example={
- *                   "title": "8c3b36c0-44be-4a35-83ff-236140b06b7f",
- *                    "description": "cendarela",
+ *                   "title": "cenderela",
+ *                    "description": "once opone",
  *                   }
  *        )
  *     ),

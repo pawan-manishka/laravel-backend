@@ -2,12 +2,12 @@
 
 /**
  * @OA\Get(
- *     path="/video/{id}/subtitle",
- *     tags={"subtitle"},
+ *     path="/video/{videoid}/subtitle?type=sub",
+ *     tags={"Subtitles"},
  *     summary="Get subtitle with id",
- *     description="Get all src",
+ *     description="Get subtitle for given video",
  *      @OA\Parameter(
- *          name="id",
+ *          name="videoid",
  *          description="video Id",
  *          required=true,
  *          in="query",
@@ -43,12 +43,12 @@
 
  /**
  * @OA\Put(
- *     path="/video/{id}/subtitle/{subid}",
- *     tags={"subtitle"},
- *     summary="src update",
- *     description="Update a src",
+ *     path="/video/{videoid}/subtitle/{subtitleId}",
+ *     tags={"Subtitles"},
+ *     summary="Modify Subtitle",
+ *     description="Modify Subtitle",
  *     @OA\Parameter(
- *          name="id",
+ *          name="videoid",
  *          description="video id",
  *          required=true,
  *          in="query",
@@ -58,7 +58,7 @@
  *          )
  *     ),
  *     @OA\Parameter(
- *          name="subid",
+ *          name="subtitleId",
  *          description="subtitle id",
  *          required=true,
  *          in="query",
@@ -70,7 +70,9 @@
  *     @OA\RequestBody(
  *        @OA\JsonContent(
  *           example={
- *                   "Description": null,
+ *                 "timeFromInSeconds": "10",
+ *                 "timeToInSeconds": "40",
+ *                 "text": "This is the updated subtitle text",
  *                   }
  *        )
  *     ),
